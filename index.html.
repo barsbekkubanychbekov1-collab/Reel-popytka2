@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA — Digital Solutions</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #eeeeea;
+        color: #292929;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        height: 91px;
+        background: white;
+        padding: 27px 7%;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+        font-size: 23px;
+        font-weight: bold;
+        letter-spacing: -1.5px;
+    }
+
+    .logo span {
+        color: #e16c43;
+    }
+
+    nav {
+        float: right;
+        margin-top: -22px;
+    }
+
+    nav a {
+        color: #333;
+        text-decoration: none;
+        margin-left: 23px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 95px 7% 80px;
+        min-height: 460px;
+        background: #e8e9e2;
+    }
+
+    .tag {
+        background: #d6d9ca;
+        display: inline-block;
+        padding: 8px 13px;
+        font-size: 11px;
+        border-radius: 2px;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 57px;
+        line-height: 1.2;
+        max-width: 650px;
+        margin: 0 0 22px;
+        letter-spacing: -2px;
+    }
+
+    h1 span {
+        color: #df704e;
+    }
+
+    .hero p {
+        max-width: 430px;
+        line-height: 1.9;
+        font-size: 14px;
+        color: #686868;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    button {
+        background: #e16c43;
+        color: white;
+        border: none;
+        padding: 16px 23px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    .secondary {
+        background: #f8f8f4;
+        color: #444;
+        margin-left: 13px;
+        border: 1px solid #ccc;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        padding: 29px 4%;
+        background: white;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .stat {
+        width: 25%;
+        text-align: center;
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .stat:last-child {
+        border: none;
+    }
+
+    .stat strong {
+        display: block;
+        font-size: 27px;
+        margin-bottom: 9px;
+    }
+
+    .stat small {
+        color: #888;
+        font-size: 10px;
+    }
+
+    .services {
+        padding: 65px 7% 90px;
+    }
+
+    .section-label {
+        font-size: 10px;
+        color: #c66b4c;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 35px;
+        margin-top: 13px;
+        letter-spacing: -1px;
+    }
+
+    .service-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 18px;
+        margin-top: 45px;
+    }
+
+    .service {
+        background: white;
+        padding: 28px 23px 34px;
+        border: 1px solid #e0e0dc;
+        min-height: 230px;
+    }
+
+    .service:nth-child(2) {
+        margin-top: 22px;
+    }
+
+    .service:nth-child(3) {
+        margin-top: -9px;
+    }
+
+    .service .number {
+        font-size: 12px;
+        color: #c5c5c5;
+    }
+
+    .service h3 {
+        margin-top: 28px;
+        font-size: 19px;
+    }
+
+    .service p {
+        font-size: 12px;
+        line-height: 1.9;
+        color: #777;
+    }
+
+    .contact {
+        margin: 0 7% 80px;
+        padding: 38px;
+        background: #dfe2d7;
+        position: relative;
+    }
+
+    .contact h2 {
+        font-size: 30px;
+    }
+
+    .contact p {
+        font-size: 13px;
+        max-width: 390px;
+        line-height: 1.8;
+    }
+
+    .contact button {
+        margin-top: 18px;
+    }
+
+    footer {
+        background: #292929;
+        color: #aaa;
+        padding: 32px 7%;
+        font-size: 11px;
+        line-height: 2;
+    }
+
+    .footer-note {
+        float: right;
+        margin-top: -25px;
+    }
+
+    #toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #292929;
+        color: white;
+        padding: 15px 20px;
+        font-size: 13px;
+        display: none;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    @media (max-width: 650px) {
+        header {
+            padding: 22px 5%;
+            height: 105px;
+        }
+
+        nav {
+            float: none;
+            margin-top: 17px;
+            white-space: nowrap;
+        }
+
+        nav a {
+            margin-left: 0;
+            margin-right: 15px;
+            font-size: 11px;
+        }
+
+        .hero {
+            padding: 65px 6% 55px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        .stats {
+            padding: 22px 1%;
+        }
+
+        .stat strong {
+            font-size: 21px;
+        }
+
+        .stat small {
+            font-size: 8px;
+        }
+
+        .service-list {
+            grid-template-columns: 1fr;
+        }
+
+        .service:nth-child(2) {
+            margin-top: -3px;
+        }
+
+        .service:nth-child(3) {
+            margin-top: 11px;
+        }
+
+        .contact {
+            margin: 0 5% 50px;
+            padding: 25px;
+        }
+
+        .footer-note {
+            float: none;
+            margin-top: 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEXORA<span>.</span></div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="tag">DIGITAL AGENCY · SINCE 2024</div>
+
+        <h1>
+            Мы создаём<br>
+            <span>будущее</span> уже<br>
+            сегодня.
+        </h1>
+
+        <p>
+            Современные цифровые решения для современного
+            бизнеса. Мы помогаем вашему бренду выйти на новый
+            уровень с помощью инновационных технологий.
+        </p>
+
+        <div class="buttons">
+            <button onclick="showMessage('Вы почти стали нашим клиентом.')">
+                Начать проект →
+            </button>
+
+            <button class="secondary"
+                onclick="showMessage('Видео пока не загрузилось. Попробуйте никогда.')">
+                Смотреть видео
+            </button>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <strong>12+</strong>
+            <small>ЛЕТ ОПЫТА</small>
+        </div>
+
+        <div class="stat">
+            <strong>8</strong>
+            <small>СЧАСТЛИВЫХ КЛИЕНТОВ</small>
+        </div>
+
+        <div class="stat">
+            <strong>97%</strong>
+            <small>УСПЕШНОСТИ</small>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <small>МЫ ПОЧТИ РАБОТАЕМ</small>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-label">ЧТО МЫ ДЕЛАЕМ</div>
+
+        <h2>Наши услуги</h2>
+
+        <div class="service-list">
+            <div class="service">
+                <div class="number">01 / DESIGN</div>
+                <h3>Веб-дизайн</h3>
+                <p>
+                    Создаём красивые и удобные сайты,
+                    которые выглядят современно и работают
+                    практически всегда.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="number">02 / TECH</div>
+                <h3>Разработка</h3>
+                <p>
+                    Используем самые новые технологии,
+                    названия которых мы иногда забываем.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="number">03 / FUTURE</div>
+                <h3>Инновации</h3>
+                <p>
+                    Мы смотрим в будущее. Иногда даже
+                    открываем новую вкладку.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-label">ДАВАЙТЕ СОТРУДНИЧАТЬ</div>
+
+        <h2>Есть идея?</h2>
+
+        <p>
+            У нас тоже есть идеи. Правда, пока они не
+            прошли согласование с нашим единственным
+            дизайнером.
+        </p>
+
+        <button onclick="contactUs()">Связаться с нами</button>
+    </section>
+</main>
+
+<footer>
+    <strong>NEXORA DIGITAL</strong><br>
+    Создаём цифровое будущее с неизвестным результатом.
+
+    <div class="footer-note">
+        © 2026 NEXORA. Все права почти защищены.
+    </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+    function showMessage(message) {
+        const toast = document.getElementById("toast");
+
+        toast.textContent = message;
+        toast.style.display = "block";
+
+        setTimeout(function () {
+            toast.style.display = "none";
+        }, 2800);
+    }
+
+    function contactUs() {
+        showMessage("Наш менеджер уже думает о вашем сообщении.");
+    }
+
+    // Серьёзная аналитика мирового уровня
+    console.log("NEXORA: сайт успешно открыт.");
+    console.log("Ошибка: дизайнер не найден.");
+</script>
+
+</body>
+  </html>
